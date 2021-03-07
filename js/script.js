@@ -16,6 +16,7 @@ let randomNumber = Math.floor(Math.random() * 3 + 1);
 console.log('Wylosowana liczba to: ' + randomNumber);
 
 let computerMove = getMoveName(randomNumber);
+let argComputerMove = getMoveName(randomNumber);
 
 
 /*if(randomNumber == 1){
@@ -34,6 +35,7 @@ let playerInput = prompt('Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.
 console.log('Gracz wpisał: ' + playerInput);
 
 let playerMove = getMoveName(playerInput);
+let argPlayerMove = getMoveName(playerInput);
 /*
 if(playerInput == '1'){
   playerMove = 'kamień';
@@ -46,32 +48,62 @@ if(playerInput == '1'){
 printMessage('Twój ruch to: ' + playerMove);
 
 
+
 function displayResult(argComputerMove, argPlayerMove){
     if( argComputerMove == 'kamień' && argPlayerMove == 'papier'){
       printMessage('Ty wygrywasz!');
-    } else if( argcomputerMove == 'kamień' && argplayerMove == 'kamień'){
+    } else if( argComputerMove == 'kamień' && argPlayerMove == 'kamień'){
         printMessage('Remis!');
-    } else if( argcomputerMove == 'kamień' && argplayerMove == 'nożyce'){
+    } else if( argComputerMove == 'kamień' && argPlayerMove == 'nożyce'){
         printMessage('Ty przegrywasz!');
-    } else if( argcomputerMove == 'papier' && argplayerMove == 'papier'){
+    } else if( argComputerMove == 'papier' && argPlayerMove == 'papier'){
         printMessage('Remis!');
-    } else if( argcomputerMove == 'papier' && argplayerMove == 'kamień'){
+    } else if( argComputerMove == 'papier' && argPlayerMove == 'kamień'){
         printMessage('Ty przegrywasz!');
-    } else if( argcomputerMove == 'papier' && argplayerMove == 'nożyce'){
+    } else if( argComputerMove == 'papier' && argPlayerMove == 'nożyce'){
         printMessage('Ty wygrywasz!');
-    } else if( argcomputerMove == 'nożyce' && argplayerMove == 'papier'){
+    } else if( argComputerMove == 'nożyce' && argPlayerMove == 'papier'){
         printMessage('Ty przegrywasz!');
-    } else if( argcomputerMove == 'nożyce' && argplayerMove == 'kamień'){
+    } else if( argComputerMove == 'nożyce' && argPlayerMove == 'kamień'){
         printMessage('Ty wygrywasz!');
-    } else if( argcomputerMove == 'nożyce' && argplayerMove == 'nożyce'){
+    } else if( argComputerMove == 'nożyce' && argPlayerMove == 'nożyce'){
         printMessage('Remis!');
-    } else {
+    } else {argPlayerMove == "nieznany ruch"
       printMessage('Tym razem przegrywasz :(');
-    }
+}
   }
 
-let displayResult =
+displayResult ();
+
+
+
+function displayResult(argComputerMove, argPlayerMove){
+    if( argComputerMove == 'kamień' && argPlayerMove == 'papier'){
+      return 'Ty wygrywasz!';
+    } else if( argComputerMove == 'kamień' && argPlayerMove == 'kamień'){
+        return 'Remis!';
+    } else if( argComputerMove == 'kamień' && argPlayerMove == 'nożyce'){
+        return 'Ty przegrywasz!';
+    } else if( argComputerMove == 'papier' && argPlayerMove == 'papier'){
+        return 'Remis!';
+    } else if( argComputerMove == 'papier' && argPlayerMove == 'kamień'){
+        return 'Ty przegrywasz!';
+    } else if( argComputerMove == 'papier' && argPlayerMove == 'nożyce'){
+        return 'Ty wygrywasz!';
+    } else if( argComputerMove == 'nożyce' && argPlayerMove == 'papier'){
+        return 'Ty przegrywasz!';
+    } else if( argComputerMove == 'nożyce' && argPlayerMove == 'kamień'){
+        return 'Ty wygrywasz!';
+    } else if( argComputerMove == 'nożyce' && argPlayerMove == 'nożyce'){
+        return 'Remis!';
+    } else if (argPlayerMove == "nieznany ruch"){
+        return 'Tym razem przegrywasz :(';
+    }
+  }
+  displayResult ();
+
 /*
+
 if( computerMove == 'kamień' && playerMove == 'papier'){
     printMessage('Ty wygrywasz!');
 } else if( computerMove == 'kamień' && playerMove == 'kamień'){
